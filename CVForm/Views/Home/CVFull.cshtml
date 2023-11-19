@@ -1,0 +1,66 @@
+﻿@model CvViewModel
+
+
+
+<div class="cv">
+    <div class="cv-header">
+        <div class="cv-header__left">
+            <div class="cv-header__photo">
+                @if (Model.Avatar != null)
+                {
+                    <img class="cv-header__photo--image" src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Avatar))" alt="">
+                }
+                else
+                {
+                    <img class="cv-header__photo--image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" alt="" />
+                }
+            </div>
+        </div>
+        <div class="cv-header__right">
+            <div class="cv-header__fullname">
+                <div class="cv-header__fullname--black">@Model.Name</div>
+                <div class="cv-header__fullname--orange">@Model.Surname</div>
+            </div>
+            <div class="cv-header__info">
+                <div class="cv-header__text">@Model.Phone</div>
+                <div class="cv-header__text">@Model.Email</div>
+                <div class="cv-header__text">@Model.Site</div>
+            </div>
+        </div>
+    </div>
+    <div class="cv-main">
+        <div class="cv-main__summary cv-main__margin-bottom">
+            <div class="cv-main__summary--header">Summary</div>
+            <div class="cv-main__summary--text">
+                @Model.Summary
+            </div>
+        </div>
+        <div class="cv-main__work-periods cv-main__margin-bottom">
+            <div class="cv-main__work-periods--header">Work periods</div>
+            @if (Model.WorkPeriods.Any())
+            {
+                <div class="cv-main__work-periods--text">
+                    @foreach (var workPeriod in Model.WorkPeriods)
+                    {
+                        <div class="cv-main__work-period">@workPeriod</div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="cv-main__work-periods--text">Work periods not found</div>
+            }
+        </div>
+        <div class="cv-main__certifications">
+            <div class="cv-main__certifications--header">Certifications</div>
+            <div class="cv-main__certifications--text">
+                @Model.Certification
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Links
+{
+    <link rel="stylesheet" href="/css/cv.css" asp-append-version="true" />
+}

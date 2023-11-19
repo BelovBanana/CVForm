@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "CvInput";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styleCvInput.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <form method="post" asp-controller="Home" asp-action="CvInput"enctype="multipart/form-data" class="cv-form">
+        <div class="cv-form__name">
+            <p class="cv-input__text--name">Имя</p>
+            <input name="name" type="text" class="cv-input__name">
+        </div>
+        <div class="cv-form__surname">
+            <p class="cv-input__text--surname">Фамилия</p>
+            <input name="surname" type="text" class="cv-input__surname">
+        </div>
+        <div class="cv-form__phone">
+            <p class="cv-input__text--phone">Телефон</p>
+            <input name="phone" type="text" class="cv-input__phone">
+        </div>
+        <div class="cv-form__email">
+            <p class="cv-input__text--email">Почта</p>
+            <input name="email" type="text" class="cv-input__email">
+        </div>
+        <div class="cv-form__site">
+            <p class="cv-input__text--site">Ваш веб-сайт</p>
+            <input name="site" type="text" class="cv-input__site">
+        </div>
+        <div class="cv-form__summary">
+            <p class="cv-input__text--summary">Резюме</p>
+            <textarea name="summary" id="" cols="30" rows="10" class="cv-input__summary"></textarea>
+        </div>
+        <div class="cv-form__workperiods">
+            <p class="cv-input__text--workperiods">Опыт работы</p>
+            <button type="button" onclick="addNewInput()">Добавить</button>
+            <button type="button" onclick="confirmWorkPeriods()">Подтвердить</button>
+            <input hidden name="workperiods" type="text" class="cv-input__workperiods">
+            <input name="workperiod" type="text" class="cv-input__workperiod">
+        </div>
+        <div class="cv-form__certifications">
+            <p class="cv-input__text--certifications">Сертификаты</p>
+            <textarea name="certification" id="" cols="30" rows="10" class="cv-input__certifications"></textarea>
+        </div>
+        <div class="cv-form__avatar">
+            <p class="cv-input__text--avatar">Фотография</p>
+            <input name="avatar" type="file" class="cv-input__avatar"  />
+        </div>
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
+
+@section Scripts
+{
+    <script src="~/js/cv-input.js" asp-append-version="true"></script>
+}

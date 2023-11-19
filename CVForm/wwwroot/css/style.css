@@ -1,0 +1,115 @@
+﻿.cv {
+    width: 700px;
+}
+
+.cv-header {
+    height: 250px;
+    display: flex;
+}
+
+.cv-header__left {
+    width: 230px;
+    margin-right: 20px;
+}
+
+.cv-header__photo {
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-header__photo--image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid orange;
+}
+
+.cv-header__right {
+    width: 550px;
+}
+
+.cv-header__fullname {
+    font-size: 40px;
+    display: flex;
+    font-weight: 800;
+}
+
+.cv-header__fullname--black {
+    margin-right: 5px;
+}
+
+.cv-header__fullname--orange {
+    color: orange;
+}
+
+.cv-main__margin-bottom {
+    margin-bottom: 30px;
+}
+
+.cv-main__summary--header {
+    font-size: 25px;
+    color: orange;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cv-main__certifications--header {
+    font-size: 25px;
+    color: orange;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+/* Общие стили формы */
+.cv-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    /* Стили для каждого поля ввода */
+    .cv-form div {
+        margin-bottom: 15px;
+    }
+
+/* Стили для текстовых полей и кнопок */
+.cv-input__text {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cv-input__name,
+.cv-input__surname,
+.cv-input__phone,
+.cv-input__email,
+.cv-input__site,
+.cv-input__summary,
+.cv-input__workperiod,
+.cv-input__certifications,
+.cv-input__avatar {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Стили для кнопок */
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+/* Стили для скрытого поля workperiods */
+.cv-input__workperiods {
+    display: none;
+}
